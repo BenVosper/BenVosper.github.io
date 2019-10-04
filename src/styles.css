@@ -13,3 +13,12 @@ html {
   align-items: center;
   justify-content: center;
 }
+
+.links {
+   float: left;
+}
+
+.links-list {
+   display: flex;
+   flex-direction: column;
+}

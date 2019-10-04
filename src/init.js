@@ -17,7 +17,13 @@ function setBackgroundImage() {
   background.style.backgroundImage = backgroundImageString;
 }
 
+function toggleLinksList() {
+  $('.links-list').first().toggle('500');
+}
+
 
 $().ready(() => {
   setBackgroundImage();
+  $('.links').bind('click', toggleLinksList);
+  $('.links-list').first().toggle();
 });
