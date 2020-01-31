@@ -3,8 +3,13 @@ html {
   font-family: "Courier New", Courier, serif;
 }
 
+body {
+  width: calc(100% - 20px);
+  margin: 10px;
+}
+
 #background {
-  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect x="25" y="25" width="50" height="50" fill="none" stroke="black" stroke-width="0.5" stroke-linejoin="round"/><animateTransform attributeName="transform" type="rotate" from="0 50 50" to="360 50 50" dur="10s" repeatCount="indefinite"/></svg>');
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect x="25" y="25" width="50" height="50" fill="none" stroke="grey" stroke-width="0.5" stroke-linejoin="round"/><animateTransform attributeName="transform" type="rotate" from="0 50 50" to="360 50 50" dur="10s" repeatCount="indefinite"/></svg>');
   height: 100%;
   width: 100%;
   background-position: center;
@@ -13,6 +18,11 @@ html {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+#bar {
+  position: absolute;
+  width: inherit;
 }
 
 #links {
@@ -26,4 +36,28 @@ html {
 }
 #links-list > a {
   margin: 0.4em 0em 0.4em 0em;
+}
+
+#about {
+  float: right;
+}
+
+#index-link {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+#main {
+  margin: auto;
+  max-width: 50%;
+}
+
+#main > h2 {
+  text-align: center;
+}
+
+@media (max-width: 500px) {
+  #main {
+    max-width: 90%;
+  }
 }

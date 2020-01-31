@@ -28,7 +28,7 @@ function toggleLinksList() {
   linksList.style.display = display === "none" ? "" : "none";
 }
 
-setBackgroundImage();
 const links = document.getElementById("links");
 links.addEventListener("click", toggleLinksList);
 toggleLinksList();
+setBackgroundImage();
