@@ -17,13 +17,15 @@ function setBackgroundImage() {
   background.style.backgroundImage = backgroundImageString;
 }
 
+const linksList = document.getElementById('links-list')
+
 function toggleLinksList() {
-  $('.links-list').first().toggle('500');
+  const display = linksList.style.display;
+  linksList.style.display = display === 'none' ? '' : 'none'
 }
 
 
-$().ready(() => {
-  setBackgroundImage();
-  $('.links').bind('click', toggleLinksList);
-  $('.links-list').first().toggle();
-});
+setBackgroundImage();
+const links = document.getElementById('links')
+links.addEventListener('click', toggleLinksList)
+toggleLinksList()
