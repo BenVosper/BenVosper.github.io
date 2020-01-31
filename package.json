@@ -5,12 +5,11 @@
   "main": "init.js",
   "dependencies": {},
   "devDependencies": {
-    "eslint": "^5.13.0",
-    "eslint-config-airbnb-base": "^13.1.0",
-    "eslint-plugin-import": "^2.16.0"
+    "prettier": "1.19.1"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "check-formatting": "npx prettier --check src/* src/projects/* index.html"
   },
   "repository": {
     "type": "git",
