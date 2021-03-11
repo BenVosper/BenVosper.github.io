@@ -56,8 +56,8 @@ function getBackground(center, innerRadius, outerRadius, nPoints) {
   path = setAttributes(path, {
     d: initialD,
     fill: "none",
-    stroke: "black",
-    "stroke-width": "0.1"
+    stroke: "RGBA(0,0,0,0.2)",
+    "stroke-width": "0.2",
   });
 
   let animate = document.createElementNS(xmlns, "animate");

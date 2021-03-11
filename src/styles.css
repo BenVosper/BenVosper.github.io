@@ -1,6 +1,8 @@
 html {
   height: 100%;
   font-family: "Courier New", Courier, serif;
+  background: linear-gradient(73deg, rgba(34,34,34,1) 0%, rgba(28,28,28,1) 100%);
+  color: rgb(191, 191, 191);
 }
 
 body {
