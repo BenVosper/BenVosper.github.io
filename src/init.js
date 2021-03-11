@@ -24,11 +24,10 @@ function setBackgroundImage() {
 const linksList = document.getElementById("links-list");
 
 function toggleLinksList() {
-  const display = linksList.style.display;
-  linksList.style.display = display === "none" ? "" : "none";
+  linksList.classList.toggle("hidden")
 }
 
 const links = document.getElementById("links");
 links.addEventListener("click", toggleLinksList);
-toggleLinksList();
+
 setBackgroundImage();
