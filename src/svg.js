@@ -58,10 +58,11 @@ function getBackground(center, innerRadius, outerRadius, nPoints) {
     fill: "none",
     stroke: "RGBA(0,0,0,0.2)",
     "stroke-width": "0.2",
+    "transform-origin": "center"
   });
 
-  let animate = document.createElementNS(xmlns, "animate");
-  animate = setAttributes(animate, {
+  let shift = document.createElementNS(xmlns, "animate");
+  shift = setAttributes(shift, {
     attributeName: "d",
     from: initialD,
     to: initialD,
@@ -70,7 +71,18 @@ function getBackground(center, innerRadius, outerRadius, nPoints) {
     dur: "25s"
   });
 
-  path.appendChild(animate);
+  let rotate = document.createElementNS(xmlns, "animateTransform");
+  rotate = setAttributes(rotate, {
+    attributeName: "transform",
+    type: "rotate",
+    from: "0",
+    to: "360",
+    dur: "100",
+    repeatCount: "indefinite"
+  });
+
+  path.appendChild(shift);
+  path.appendChild(rotate);
   svgElement.appendChild(path);
   return svgElement;
 }
