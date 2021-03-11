@@ -1,0 +1,16 @@
+version: "3.4"
+
+services:
+  site:
+    image: bvsite:local
+    build:
+      context: .
+    container_name: bvsite
+    volumes:
+      - ./src:/app/src
+      - ./index.html:/app/index.html
+    environment:
+      - PORT=8080
+    ports:
+      - "8080:8080"
+    command: "server"

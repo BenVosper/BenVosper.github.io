@@ -1,25 +1,16 @@
 version: 2
 jobs:
   build:
-    docker:
-      - image: circleci/node:10.9
+    machine:
+      image: ubuntu-2004:202101-01
 
     steps:
       - checkout
 
-      - restore_cache:
-          keys:
-            - v1-dependencies-{{ checksum "package-lock.json" }}
-
       - run:
-          name: Install dependencies
-          command: npm ci
-
-      - save_cache:
-          paths:
-            - node_modules
-          key: v1-dependencies-{{ checksum "package-lock.json" }}
+          name: "Build container"
+          command: docker-compose build
 
       - run:
           name: Check formatting
-          command: npm run check-formatting
+          command: docker-compose run --rm site lint
