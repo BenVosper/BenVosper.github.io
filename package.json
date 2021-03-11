@@ -9,7 +9,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "check-formatting": "npx prettier --check src/* src/projects/* index.html about.html"
+    "check-formatting": "npx prettier --check src/* src/projects/*"
   },
   "repository": {
     "type": "git",
