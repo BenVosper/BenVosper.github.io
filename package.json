@@ -2,9 +2,8 @@
   "name": "benvosper.github.io",
   "version": "0.0.1",
   "description": "https://benvosper.com",
-  "main": "init.js",
-  "dependencies": {},
   "devDependencies": {
+    "http-server": "0.12.3",
     "prettier": "1.19.1"
   },
   "scripts": {
