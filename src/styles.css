@@ -26,8 +26,7 @@ img {
   filter: drop-shadow(20px 10px 20px rgb(0, 0, 0));
 }
 
-#background {
-  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect x="25" y="25" width="50" height="50" fill="none" stroke="grey" stroke-width="0.5" stroke-linejoin="round"/><animateTransform attributeName="transform" type="rotate" from="0 50 50" to="360 50 50" dur="10s" repeatCount="indefinite"/></svg>');
+#background {;
   height: 100%;
   width: 100%;
   background-position: center;
