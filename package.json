@@ -4,11 +4,11 @@
   "description": "https://benvosper.com",
   "devDependencies": {
     "http-server": "0.12.3",
-    "prettier": "1.19.1"
+    "prettier": "2.2.1"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "check-formatting": "npx prettier --check src/* src/projects/* index.html about.html"
+    "check-formatting": "npx prettier --check src/*.js src/*.css"
   },
   "repository": {
     "type": "git",

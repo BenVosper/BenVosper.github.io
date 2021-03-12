@@ -24,7 +24,7 @@ function setBackgroundImage() {
 const linksList = document.getElementById("links-list");
 
 function toggleLinksList() {
-  linksList.classList.toggle("hidden")
+  linksList.classList.toggle("hidden");
 }
 
 const links = document.getElementById("links");

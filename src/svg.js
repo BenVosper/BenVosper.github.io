@@ -29,10 +29,10 @@ function* zigPoints(center, innerRadius, outerRadius, nPoints) {
 function getZigPathD(center, innerRadius, outerRadius, nPoints) {
   let d = "M";
   const points = [...zigPoints(center, innerRadius, outerRadius, nPoints)].map(
-    result => result.value
+    (result) => result.value
   );
   d += points.reduce((coords, point) => {
-    const [x, y] = point.map(coord => fuzz(coord, 0.1));
+    const [x, y] = point.map((coord) => fuzz(coord, 0.1));
     return `${coords} ${x}, ${y}`;
   });
   return `${d} Z`;
@@ -40,7 +40,7 @@ function getZigPathD(center, innerRadius, outerRadius, nPoints) {
 
 function setAttributes(element, attributes) {
   const newElement = element.cloneNode(true);
-  Object.entries(attributes).map(entry =>
+  Object.entries(attributes).map((entry) =>
     newElement.setAttributeNS(null, ...entry)
   );
   return newElement;
@@ -58,7 +58,7 @@ function getBackground(center, innerRadius, outerRadius, nPoints) {
     fill: "none",
     stroke: "RGBA(0,0,0,0.2)",
     "stroke-width": "0.2",
-    "transform-origin": "center"
+    "transform-origin": "center",
   });
 
   let shift = document.createElementNS(xmlns, "animate");
@@ -68,7 +68,7 @@ function getBackground(center, innerRadius, outerRadius, nPoints) {
     to: initialD,
     values: `${initialD};${secondD};${initialD}`,
     repeatCount: "indefinite",
-    dur: "25s"
+    dur: "25s",
   });
 
   let rotate = document.createElementNS(xmlns, "animateTransform");
@@ -78,7 +78,7 @@ function getBackground(center, innerRadius, outerRadius, nPoints) {
     from: "0",
     to: "360",
     dur: "100",
-    repeatCount: "indefinite"
+    repeatCount: "indefinite",
   });
 
   path.appendChild(shift);
