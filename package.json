@@ -8,8 +8,8 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "check-formatting": "npx prettier --check src/projects/*.html src/*.html src/*.css src/*.js index.html",
-    "fix-formatting": "npx prettier -w src/projects/*.html src/*.html src/*.css src/*.js index.html"
+    "check-formatting": "npx prettier --check projects/*.html src/* *.html",
+    "fix-formatting": "npx prettier -w projects/*.html src/* *.html"
   },
   "repository": {
     "type": "git",

@@ -8,7 +8,11 @@ services:
     container_name: bvsite
     volumes:
       - ./src:/app/src
+      - ./projects:/app/projects
+      - ./assets:/app/assets
       - ./index.html:/app/index.html
+      - ./about.html:/app/about.html
+      - ./package.json:/app/package.json
     environment:
       - PORT=8080
     ports:
