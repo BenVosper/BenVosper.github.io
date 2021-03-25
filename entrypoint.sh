@@ -10,4 +10,9 @@ if [[ "$1" = 'lint' ]]; then
   exit
 fi
 
+if [[ "$1" = 'prettify' ]]; then
+  npm run fix-formatting
+  exit
+fi
+
 exec "$@"
