@@ -109,6 +109,10 @@ p.caption {
   text-align: center;
 }
 
+ul {
+  line-height: 1.5em;
+}
+
 #footer {
   text-align: center;
   position: absolute;
