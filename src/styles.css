@@ -1,6 +1,8 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap");
+
 html {
   height: 100%;
-  font-family: "Courier New", Courier, serif;
+  font-family: "Roboto Mono", monospace;
   background: linear-gradient(
     73deg,
     rgba(34, 34, 34, 1) 0%,
@@ -96,6 +98,7 @@ img {
 
 p {
   line-height: 1.5em;
+  text-align: justify;
 }
 
 p.note {
@@ -114,10 +117,12 @@ ul {
 }
 
 #footer {
-  text-align: center;
   position: absolute;
   bottom: 0px;
   left: 0;
   right: 0;
   margin: auto;
+}
+#footer p.note {
+  text-align: center;
 }
