@@ -31,6 +31,9 @@ img {
   margin-top: 20px;
   margin-bottom: 20px;
   filter: drop-shadow(20px 10px 20px rgb(0, 0, 0));
+  width: 80%;
+  max-height: 500px;
+  object-fit: contain;
 }
 
 #background {
@@ -125,4 +128,18 @@ ul {
 }
 #footer p.note {
   text-align: center;
+}
+
+.click-zoom input[type="checkbox"] {
+  display: none;
+}
+
+.click-zoom img {
+  cursor: zoom-in;
+}
+
+.click-zoom input[type="checkbox"]:checked ~ img {
+  width: 100%;
+  cursor: zoom-out;
+  max-height: 2000px;
 }
