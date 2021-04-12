@@ -1,0 +1,137 @@
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="../src/styles.css" />
+  <title>Rotary Tumbler</title>
+</head>
+
+<div id="bar">
+  <div id="links">
+    <a href="../index.html">Home</a>
+  </div>
+
+  <div id="about">
+    <a href="../about.html">About</a>
+  </div>
+</div>
+
+<div id="main">
+  <h2>Rotary Tumbler</h2>
+
+  <p class="caption">Project: Late 2018</p>
+  <p class="caption">Writeup: April 2021</p>
+
+  <img
+    src="../assets/tumbler/tumbler.gif"
+    alt="a gif of a rotary tumbler"
+    style="width: 60%"
+  />
+
+  <p class="caption">Also, if you turn it upside down it's a little car</p>
+
+  <p>
+    This was a prototype that turned out so ROCK SOLID™ that it's become one of
+    my most-used devices and hasn't missed a beat.
+  </p>
+
+  <p>
+    It's just a jar which you fill with some kind of media and your parts. It
+    then rotates at a speed you set in order to gently grind / polish whatever
+    you put inside it. I use it a lot for small parts (eg. knife bolsters) and
+    disassembled tools, the only limit is what you can physically fit in the
+    jar.
+  </p>
+
+  <img src="../assets/tumbler/cross-section.png" style="width: 50%" />
+  <p class="caption">
+    I just wanted an excuse to play with some casting epoxy...
+  </p>
+
+  <p>
+    The cylinder itself is constructed from a cheap screw-top plastic food
+    container (from the legendary Khan's Bargain, Peckham. They've got
+    <em>everything...</em>). I chose this one because of it's hourglass shape
+    which I thought might help it self-center itself on the rollers. It turned
+    out to actually make it much worse, but two little guides on either end keep
+    it in place. Internally, I added some wooden baffles to help with agitating
+    the media. Then the whole thing is covered in a hard casting epoxy which is
+    slowly worn away and can be topped up with a new pour if needed (I've only
+    done this once after two years of use). All seems to work fine. I considered
+    glass jars, but I'd be nervous about heavier parts hitting that 1-in-10000
+    ultra-bounce and smashing the whole thing...
+  </p>
+
+  <p>
+    I've mostly used it with specialised ceramic media and water, with a splash
+    of detergent (the foam that forms helps to quiet the whole thing down). I
+    did buy a bottle of the expensive solution you're supposed to use with the
+    media but never found it to be needed. Maybe it prolongs the life of the
+    media or something, but it's not like I use it enough to notice.
+  </p>
+
+  <p>
+    For a very fine matte polish, I've also found a mixture of stainless-steel
+    pins, metal polish and WD40 to work surprisingly well. Much messier than the
+    water though.
+  </p>
+
+  <p>
+    I tend to set it up on the sofa to prevent vibrations being transferred into
+    the ceiling downstairs (sorry No. 75....). This coupled with an ad-hoc
+    isolation booth made of cushions and throws means you can't even hear it in
+    the next room. Fine to leave running all day.
+  </p>
+
+  <p>
+    Aside from it's surprising robustness, this monstrosity is only notable
+    because it was one of my early forays into PCB design. I happened to have
+    the stepper motor to use, so decided to make a control board for it based
+    around a jellybean
+    <a href="https://www.pololu.com/product/1182">A4988 driver</a>. These
+    drivers just take a PWM signal to tell the motor to step so abstract away
+    all the complexity of microstepping etc. In my case the variable-frequency
+    PWM signal is provided by a 555 in an astable configuration. Don't laugh at
+    the whole buck converter just for the 555, this was before I knew about
+    voltage regulators. Obviously a 7805 would be fine in place of that.
+  </p>
+
+  <img
+    src="../assets/tumbler/schematic.png"
+    alt="circuit schematic of stepper driver"
+    style="width: 70%"
+  />
+  <p class="caption">Can you tell I'm not an electrical engineer?</p>
+
+  <p>
+    This was all done via <a href="https://easyeda.com/">EasyEDA</a> because
+    JLCPCB was the service I'd seen advertised most. For a complete amateur, it
+    was remarkably easy to convert this simple schematic into a board layout and
+    then into a physical board! The hardest part was getting all of the
+    footprints for the specific boards I had correct. But we got there in the
+    end.
+  </p>
+
+  <img
+    src="../assets/tumbler/board.png"
+    alt="board layout of stepper driver"
+    style="width: 40%"
+  />
+  <p class="caption">All in all, two revisions isn't bad for a first timer!</p>
+
+  <p>
+    If I was to do another revision, I'd have dip switches for all of the
+    configuration pins on the driver so that you could modify the microstep
+    parameters etc. on the fly. And even add another 555 assembly to feed a slow
+    PWM signal into the step direction pin! For a kinda back-and-forwards
+    washing machine motion which would help even out the wear in the drum
+    automatically.
+  </p>
+
+  <p>
+    The next <em>hardware</em> revision will get a bigger drum, bigger motor,
+    actual bearings on the casters, an actual enclosure for the driver and an
+    actual knob for the potentiometer.
+  </p>
+  <div id="footer">
+    <p class="note">BV21</p>
+  </div>
+</div>
