@@ -1,0 +1,134 @@
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="../src/styles.css" />
+  <title>Pumpmaster 5000</title>
+</head>
+
+<div id="bar">
+  <div id="links">
+    <a href="../index.html">Home</a>
+  </div>
+
+  <div id="about">
+    <a href="../about.html">About</a>
+  </div>
+</div>
+
+<div id="main">
+  <h2>Pumpmaster 5000</h2>
+
+  <p class="caption">Project: 2018 - 2019</p>
+  <p class="caption">Writeup: May 2021</p>
+
+  <div class="click-zoom">
+    <label>
+      <input type="checkbox" />
+      <img
+        src="../assets/pumpmaster5000/v2.jpg"
+        alt="a photo of an irrigation system on a balcony"
+      />
+    </label>
+  </div>
+  <p class="caption">Freshly moistened</p>
+
+  <p>
+    My small south-west-facing balcony cycles between scorching hot in the
+    spring / summer to inhospitably barren and cold in the winter. There's no
+    in-between. I thought I'd create a device to add "occasionally damp" to
+    these characteristics.
+  </p>
+
+  <p>
+    Thought I'd keep it simple implementation-wise, so just went with a timer
+    approach. In a proper solution, you'd probably do something cool with soil
+    moisture / humidity / temperature tracking. But "just dump x liters of water
+    per day" works fine for my little pots! I think I ran my perfboard prototype
+    outside in a tupperware box for quite a few weeks until it got rained on and
+    died. But it had passed proof-of-concept, so I started looking into a more
+    permanent solution.
+  </p>
+
+  <div class="click-zoom">
+    <label>
+      <input type="checkbox" />
+      <img
+        src="../assets/pumpmaster5000/pcb.png"
+        alt="a pcb for an irrigation system"
+      />
+    </label>
+  </div>
+  <p class="caption">It's got a little flower on it</p>
+
+  <p>
+    This was my first custom PCB for a project, but there's not much to it. It's
+    just a carrier for an Arduino Mini (which I happened to have in stock) with
+    terminals for all the IO. Took a few revisions to fix all of my amateur
+    mistakes but <a href="https://easyeda.com/">EasyEDA</a> / JLCPCB makes it
+    all quite easy. These days I'd use JST connectors instead of screw
+    terminals, I remember these being a particular pain in the ass when
+    everything was all in.
+  </p>
+
+  <p>
+    The code used very dumb low-power mode sleeps to count up a timer and squirt
+    for 30 seconds every six hours or something. I've been meaning to figure out
+    Arduino interrupts but haven't ever gotten around to it! It was monitoring a
+    float-valve in the reservoir as well as an override switch to allow a manual
+    top-up if needed. The pump was a small 12V submersible pond pump which had
+    plenty of power to fill up the ~3m of tube. It all got crammed into a
+    "waterproof" project box with a whole load of silicone. I ran a 240V cable
+    from inside under the squishy corner insulation of the balcony door to power
+    the whole thing. (One day I'll do a self-contained system with a solar panel
+    and a little battery. Would be cool)
+  </p>
+
+  <div class="click-zoom">
+    <label>
+      <input type="checkbox" />
+      <img
+        src="../assets/pumpmaster5000/v1.jpg"
+        alt="another photo of an irrigation system on a balcony"
+      />
+    </label>
+  </div>
+  <p class="caption">Danglies</p>
+
+  <p>
+    Version 1 used flexible tubing with holes haphazardly poked into it. To
+    nobody's great surprise, this was useless. The water all came out around the
+    nozzles and the lines sagged and went mouldy in the low spots which filled
+    with water. But the setup all survived a year of solid pumping before I
+    upgraded to V2 in 2019.
+  </p>
+
+  <div class="click-zoom">
+    <label>
+      <input type="checkbox" />
+      <img
+        src="../assets/pumpmaster5000/overgrown.jpg"
+        alt="yet another photo of an irrigation system on a balcony"
+      />
+    </label>
+  </div>
+  <p class="caption">Mmmmm, roadside pollutomatoes</p>
+
+  <p>
+    Version 2 got nice hard tubing and an upgraded enclosure. I could epoxy all
+    the nozzles in properly this time so it directed way more water out onto the
+    plants rather than trickling it all down the walls. It all looked a lot
+    tidier! This time I hung the enclosure from the wall next to the reservoir
+    (bin) to keep it out of the rain a bit more: the old enclosure was sitting
+    on the floor and was filled with rusty water when I opened it up to turn it
+    on again!
+  </p>
+
+  <p>
+    I'm still trying to work out how to keep anything at all alive on the desert
+    balcony over the winter. I kinda want to try putting a plastic roof over the
+    whole thing to make it a little greenhouse...
+  </p>
+
+  <div id="footer">
+    <p class="note">BV21</p>
+  </div>
+</div>
