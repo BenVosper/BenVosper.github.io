@@ -1,0 +1,254 @@
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="../src/styles.css" />
+  <title>The Hot Log</title>
+</head>
+
+<div id="bar">
+  <div id="links">
+    <a href="../index.html">Home</a>
+  </div>
+
+  <div id="about">
+    <a href="../about.html">About</a>
+  </div>
+</div>
+
+<div id="main">
+  <h2>The Hot Log</h2>
+
+  <p class="caption">Project: April - May 2021</p>
+  <p class="caption">Writeup: July 2021</p>
+
+  <div class="click-zoom">
+    <label>
+      <input type="checkbox" />
+      <img
+        src="../assets/the-hot-log/hothole.jpg"
+        alt="an image of a hot log"
+      />
+    </label>
+  </div>
+
+  <p class="caption">Freshly warmed hot log</p>
+
+  <p>
+    This dangerous, shiny log is an electric muffle furnace. I made it to give
+    me better control over the various heat treatment processes involved in
+    making blades. Hardening steel with a blowtorch is certainly doable, but
+    you're greatly limited in terms of the kinds of steels that you're able to
+    use. Most steels outside of simple carbon steels require more precise
+    temperature control and hold times to reach the high performance they're
+    designed for. I've had a lot of success using simple carbon steels like
+    1095, but I'm keen to try out some steels with higher potential performance.
+    Some simple stainless steels (which often need to be held at their hardening
+    temperature for ten minutes or more) will be first on my list.
+  </p>
+
+  <p>
+    Lots of the DIY "heat treatment ovens" you see around are made from fire
+    bricks encasing some kind of coiled wire element, but the design has always
+    seemed somewhat inefficient to me, certainly for knife making. With this
+    cylindrical design, the internal area is greatly reduced in comparison to a
+    more traditional oven chamber, but the internal temperature is extremely
+    even as the element surrounds the entire chamber symmetrically.
+  </p>
+
+  <div class="click-zoom">
+    <label>
+      <input type="checkbox" />
+      <img
+        src="../assets/the-hot-log/coil.jpg"
+        alt="an image of the hot log coil"
+      />
+    </label>
+  </div>
+
+  <p class="caption">
+    Expensive tube + expensive wire = crunchy hot log center
+  </p>
+
+  <p>
+    This is a 450mm tube of Aluminous Porcelain with a 60mm ID. I believe
+    they're generally used to make honking great rheostats and high-power fuses,
+    but it's ideal here because of its stability at extremely high temperatures
+    (1500°C and above). It's wrapped in 20m of 1mm thick Kanthal-A1 heating
+    wire, an iron-chromium-aluminium alloy designed for similarly high
+    temperatures. That gives a coil resistance of 35Ω for a total heating power
+    of 1600W. It's all glued together with fireplace cement. The hardest part of
+    making this assembly was drilling the small holes in each end of the tube to
+    give me somewhere to anchor the wire. The porcelain is ferociously hard, and
+    ate three carbide drill bits to get through just 10mm of it.
+  </p>
+
+  <div class="click-zoom">
+    <label>
+      <input type="checkbox" />
+      <img
+        src="../assets/the-hot-log/probe.jpg"
+        alt="an image of the hot log temperature probe"
+      />
+    </label>
+  </div>
+
+  <p class="caption">Hot.</p>
+
+  <p>
+    Once the coil was dry, it was wrapped in 100mm of ceramic insulation and
+    then crammed in a galvanised chimney tube. I thought I'd be able to compress
+    the roll enough to fit inside the 250mm pipe I'd ordered, but the ceramic
+    was too dense. I had to cut a slice out of the tube and rivet it all up!
+  </p>
+
+  <p>
+    The end of the chamber was sealed with a little disc of tile, with an
+    opening for the ceramic-covered K-Type thermocouple to pass through and
+    protrude about 150mm into the chamber (see above image). This was done so
+    we're reading as close as possible to the center of the chamber. The probe
+    and power wires snake out the back of the sealed outer shell to the
+    controller box.
+  </p>
+
+  <div class="click-zoom">
+    <label>
+      <input type="checkbox" />
+      <img
+        src="../assets/the-hot-log/controller.jpg"
+        alt="an image of the hot log controller"
+      />
+    </label>
+  </div>
+
+  <p class="caption">Gooey!</p>
+
+  <p>
+    There are plenty of PID controllers available to control exactly this kind
+    of system, but I decided to do things the hard way. I saw
+    <a href="https://www.youtube.com/user/reppesis">Marco Reps'</a>* video on
+    the <a href="https://www.tinkerforge.com/en/">Tinkerforge</a> system and my
+    mind was immediately full of ideas.
+  </p>
+
+  <p class="note">
+    *An absolute legend, and one of my only two Patreon subscriptions. I just
+    have a thing for dorky German dudes ok?
+  </p>
+
+  <p>
+    So I picked up a thermocouple reader, LCD touchscreen, solid-state relay and
+    a Pi Zero control brick and started putting stuff together! The sheer power
+    you get from being able to use this cherry-picked, validated, documented
+    hardware in a language of your choice is just incredible. Everything worked
+    like a charm, and I had a working unregulated control system with a simple
+    GUI up and running in an evening. Absolute madness. The full controller code
+    is here: <a href="https://github.com/BenVosper/heated">here</a>, but the
+    long and short of it is: you set a temperature and the PID control loop sets
+    the heater power as needed. There's even a little graph you can use to
+    monitor stability! Hours of fun.
+  </p>
+
+  <p>
+    The Pi Zero running the whole show, display, thermocouple reader, relay with
+    heatsink and a fan were all crammed into this cute little enclosure. The
+    neons on the front indicate power coming in, and power going out via the
+    relay. The heater indicator is particularly cool as it's paralleled with the
+    heater coil itself so flashes with the same PWM frequency for some very
+    satisfying live feedback! I did spend a non-zero amount of time planning the
+    layout and wiring internally, so it's not <i>too</i> bad. But I always end
+    up wishing I'd done a PCB everything could just go on instead of connecting
+    it all with spade connectors or whatever, no matter how neat they are. Maybe
+    in V2 eh? (Put that on my gravestone)
+  </p>
+
+  <p>
+    After I'd finished reinventing that wheel, then I had to tune the thing.
+    This is the process of finding the PID parameters that give you the desired
+    performance. It's a balancing act between heat-up speed, risk of overshoot
+    and stability. I eventually settled with a fairly laid-back proportional
+    term, heavy derivative term to kerb the intense thermal momentum of the
+    system, no integral, and a slight positive bias to let it sit right on the
+    setpoint in the middle of the usable range. I figured stability was more
+    important than needing to stick to the setpoint perfectly.
+  </p>
+
+  <div class="click-zoom">
+    <label>
+      <input type="checkbox" />
+      <img
+        src="../assets/the-hot-log/hot-log-heating.png"
+        alt="a graph showing hot log heatup performance"
+      />
+    </label>
+  </div>
+
+  <p class="caption">
+    "The only difference between science and screwing-around is writing it down"
+  </p>
+
+  <p>
+    The heating graph illustrates the tuning pretty well: no overshoot, no
+    oscillation. At the 500°C setpoint, the stable temperature is bang on. But
+    at the lower setpoint (230°C) it's slightly above and at the top end (900°C)
+    it's slightly under. I guess this is due to the losses being non-linear, so
+    a similarly non-linear bias term would probably sort it out. But I'm happy
+    enough with this performance!
+  </p>
+
+  <div class="click-zoom">
+    <label>
+      <input type="checkbox" />
+      <img
+        src="../assets/the-hot-log/hot-log-cooling.png"
+        alt="a graph showing hot log cooldown performance"
+      />
+    </label>
+  </div>
+
+  <p class="caption">Cool it down now.</p>
+
+  <p>
+    This less interesting graph just illustrates the impressive performance of
+    the insulation. After a full power off from 900°C, we were still above 100°C
+    after four hours. Now that I think about it, that non-linear bias term I
+    want is probably proportional to the derivative of this curve. (<i
+      >TODO: Check the curve is the same from different starting points,
+      implement something.</i
+    >)
+  </p>
+
+  <p>
+    The next challenge was calibrating the thermocouple. Sure, it's reading
+    200°C, but how do you know that's right? I picked up a range of
+    temperature-indicating sticks which are like little crayons which melt at
+    finely-specified temperatures. They were a bit finnicky to use, but after
+    various tests I was happy enough that the indicated temperatures are within
+    ~30°C of reality across the range. This seems high, but it's relatively
+    linear and so simple to compensate for. It's also easy enough to dial in the
+    temperatures required for any given steel based on measured properties
+    (hardness etc.), so the absolute accuracy of the dial isn't the be-all and
+    end-all.
+  </p>
+
+  <p>
+    So after about two months of fiddling I finally felt comfortable putting a
+    knife in it. And NO, the 1095 heat-treat won't be any better than what I was
+    getting with the blowtorch setup, but it's now quantifiable and repeatable.
+    Also I can use it silently in the middle of the night I suppose? Perks.
+  </p>
+
+  <div class="click-zoom">
+    <label>
+      <input type="checkbox" />
+      <img
+        src="../assets/the-hot-log/label.jpg"
+        alt="the label of the humorously named 'Hot Log'"
+      />
+    </label>
+  </div>
+
+  <p class="caption">No, I didn't do the "1" upside down and then redo it...</p>
+
+  <div id="footer">
+    <p class="note">BV21</p>
+  </div>
+</div>
