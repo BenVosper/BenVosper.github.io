@@ -2,7 +2,7 @@
 set -e
 
 if [[ "$1" = 'server' ]]; then
-  node_modules/http-server/bin/http-server -p $PORT /app
+  node_modules/http-server/bin/http-server -p $PORT /app -c-1
 fi
 
 if [[ "$1" = 'lint' ]]; then
