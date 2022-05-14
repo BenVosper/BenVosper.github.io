@@ -13,6 +13,7 @@ services:
       - ./index.html:/app/index.html
       - ./about.html:/app/about.html
       - ./package.json:/app/package.json
+      - ./package-lock.json:/app/package-lock.json
     environment:
       - PORT=8080
     ports:
