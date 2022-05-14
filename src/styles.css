@@ -109,6 +109,10 @@ p.note {
   color: rgb(100, 100, 100);
 }
 
+p.note > a {
+  color: rgb(120, 120, 120);
+}
+
 p.caption {
   font-size: 12px;
   color: rgb(100, 100, 100);
