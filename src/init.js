@@ -27,7 +27,7 @@ function toggleLinksList() {
   linksList.classList.toggle("hidden");
 }
 
-const links = document.getElementById("links");
-links.addEventListener("click", toggleLinksList);
+const linksButton = document.getElementById("index-link");
+linksButton.addEventListener("click", toggleLinksList);
 
 setBackgroundImage();
