@@ -9,7 +9,7 @@ const getSlideName = (slide) => {
   if (!slideImg) {
     return null;
   }
-  const imgPath = slideImg.getAttribute("src");
+  const imgPath = slideImg.getAttribute("data-splide-lazy");
   if (!imgPath) {
     return null;
   }
@@ -34,6 +34,7 @@ const onLoad = () => {
     perMove: 1,
     keyboard: "global",
     start: startIndex,
+    lazyLoad: "nearby",
   });
 
   splide.mount();
