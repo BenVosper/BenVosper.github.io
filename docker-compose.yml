@@ -12,6 +12,7 @@ services:
       - ./assets:/app/assets
       - ./index.html:/app/index.html
       - ./about.html:/app/about.html
+      - ./gallery.html:/app/gallery.html
       - ./package.json:/app/package.json
       - ./package-lock.json:/app/package-lock.json
     environment:

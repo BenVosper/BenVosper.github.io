@@ -147,3 +147,12 @@ ul {
   cursor: zoom-out;
   max-height: 2000px;
 }
+
+.splide__slide {
+  width: 100%;
+  height: 80%
+}
+
+.splide__slide img{
+  max-height: 90%;
+}
