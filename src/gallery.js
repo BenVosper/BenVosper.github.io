@@ -9,13 +9,17 @@ const getSlideName = (slide) => {
   if (!slideImg) {
     return null;
   }
+  const alias = slideImg.getAttribute("data-splide-alias");
+  if (!!alias) {
+    return alias;
+  }
   const imgPath = slideImg.getAttribute("data-splide-lazy");
   if (!imgPath) {
     return null;
   }
   const pathComponents = imgPath.split("/");
   return pathComponents.length
-    ? pathComponents[pathComponents.length - 1]
+    ? pathComponents[pathComponents.length - 1].replace(/\.[^/.]+$/, "")
     : null;
 };
 
