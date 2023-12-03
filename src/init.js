@@ -14,7 +14,7 @@ function setBackgroundImage() {
     zigCenter,
     zigInnerRadius,
     zigOuterRadius,
-    nPoints
+    nPoints,
   );
   const backgroundSVGString = elementToString(backgroundSVG);
   const backgroundImageString = `url('${svgDataURLPrefix}${backgroundSVGString}')`;

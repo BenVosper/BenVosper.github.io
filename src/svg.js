@@ -29,7 +29,7 @@ function* zigPoints(center, innerRadius, outerRadius, nPoints) {
 function getZigPathD(center, innerRadius, outerRadius, nPoints) {
   let d = "M";
   const points = [...zigPoints(center, innerRadius, outerRadius, nPoints)].map(
-    (result) => result.value
+    (result) => result.value,
   );
   d += points.reduce((coords, point) => {
     const [x, y] = point.map((coord) => fuzz(coord, 0.1));
@@ -41,7 +41,7 @@ function getZigPathD(center, innerRadius, outerRadius, nPoints) {
 function setAttributes(element, attributes) {
   const newElement = element.cloneNode(true);
   Object.entries(attributes).map((entry) =>
-    newElement.setAttributeNS(null, ...entry)
+    newElement.setAttributeNS(null, ...entry),
   );
   return newElement;
 }
