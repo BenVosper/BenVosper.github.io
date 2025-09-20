@@ -1,0 +1,423 @@
+<!doctype html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="../src/styles.css" />
+  <title>Titanium Framelock Folder</title>
+</head>
+
+<div id="bar">
+  <div id="links">
+    <a href="../index.html">Home</a>
+  </div>
+
+  <div id="about">
+    <a href="../about.html">About</a>
+  </div>
+</div>
+
+<div id="main">
+  <h2>Titanium Framelock Folder</h2>
+
+  <p class="caption">Project: Mid 2025</p>
+  <p class="caption">Writeup: September 2025</p>
+
+  <div class="click-zoom">
+    <label>
+      <input type="checkbox" />
+      <img
+        loading="lazy"
+        src="../assets/vf1/closed.jpg"
+        alt="an image of a folding knife"
+      />
+    </label>
+  </div>
+
+  <p class="caption">Aw, flowers <3</p>
+
+  <p>
+    My first folding knife design. Designed from scratch and built entirely by
+    hand, featuring:
+  </p>
+
+  <ul>
+    <li>
+      3mm thick, full flat ground blade using the sublime
+      <a href="https://www.erasteel.com/products/asp-2053/">ASP-2053</a> steel
+      at 64HRC
+    </li>
+    <li>Sandblasted Grade 5 Titanium frame</li>
+    <li>Frame lock with ceramic bearing lockbar insert</li>
+    <li>Bronze washers</li>
+    <li>Stainless torx screws and pivot</li>
+    <li>One-hand opening and closing</li>
+    <li>Extremely solid lockup, no lock-stick, perfect centering</li>
+  </ul>
+
+  <p>
+    I'm not claiming that this is the best or most beautiful design ever, nor
+    that it's particularly original. I've taken inspiration and design ideas
+    from a load of similar knives by great designers. I mostly just wanted to
+    see if I could pull off my own version.
+  </p>
+
+  <p>
+    I've always appreciated the elegance of
+    <a href="https://chrisreeve.com/">Chris Reeve's</a> legendary "Reeve
+    Integral Lock" design. Now widely copied, you often hear them referred to as
+    "frame locks" because the primary element stopping the blade from closing is
+    a flexible portion of the knife's frame itself. A very efficient design with
+    a minimum of moving parts, with the strength and satisfying feeling of the
+    lockup being absolutely unparalleled when implemented properly. So when I
+    started thinking about my own folder design, I pretty much immediately went
+    with the framelock concept.
+  </p>
+
+  <div class="click-zoom">
+    <label>
+      <input type="checkbox" />
+      <img
+        loading="lazy"
+        src="../assets/vf1/open.jpg"
+        alt="an image of a folding knife open"
+      />
+    </label>
+  </div>
+
+  <p class="caption">Considering hand modelling...</p>
+
+  <p>
+    I quickly realised that the design and manufacturing considerations are many
+    times more complex with folders than with nice simple fixed-blades. You have
+    a whole world of inter-related variables around the opening and closing
+    mechanism that impact performance and handling, that you somehow have to
+    balance and compromise with the aesthetics and ergonomics of the various
+    parts. I spent many late nights in the CAD black-hole, moving splines back
+    and forwards before I finally landed on a design that would theoretically
+    work, I theoretically liked the look of, and I could theoretically
+    manufacture in my small garage.
+  </p>
+
+  <div class="click-zoom">
+    <label>
+      <input type="checkbox" />
+      <img
+        loading="lazy"
+        src="../assets/vf1/process.jpg"
+        alt="an image of some folding knife prototypes"
+      />
+    </label>
+  </div>
+
+  <p class="caption">
+    Looking at this first one, it's a miracle I managed to pull this off
+  </p>
+
+  <p>
+    This is where my series of side-quests began. My early prototypes were
+    really suffering from lack of precision: a mounting hole being 0.5mm out of
+    position on a fixed blade is basically unnoticeable, and can be reasonably
+    accommodated by adjusting the scales or handle holes to match. But a similar
+    inaccuracy here essentially renders the whole part scrapped. Or at the very
+    best requiring an individual hand-fudging to multiple parts which might mean
+    you can actually assemble the thing, but it now doesn't match the plans and
+    your carefully designed clearances and mechanism no longer work.
+  </p>
+
+  <p>
+    So side-quest sub-project 1 was to devise a better method of laying out my
+    paper plans onto the physical materials. I've tried a load of different
+    solutions this year, having become frustrated with the old-faithful "glue
+    the printer paper to the metal" technique on the
+    <a href="./vk1-ft.html">kitchen knife</a>. With the paper wearing or burning
+    off or getting sodden with oil, it's impossible to actually hit your lines.
+    But I eventually stumbled upon quite a reliable method of transferring the
+    actual printed toner to the metal via the application of acetone under mild
+    heating:
+  </p>
+
+  <div class="click-zoom">
+    <label>
+      <input type="checkbox" />
+      <img
+        loading="lazy"
+        src="../assets/vf1/marking.jpg"
+        alt="an image of a piece of metal with lines on it"
+      />
+    </label>
+  </div>
+
+  <p class="caption">Toner-transfer used for marking out.</p>
+
+  <p>
+    This leaves you with an incredibly sharp and durable line which resists
+    heating while grinding. Holes can also be center-punched to within 0.1 -
+    0.2mm of spec (I'm guessing here) with an optical center-punch. Which turns
+    out to be good enough for the whole thing to go together. I still have room
+    for improvement here, which I hope will come with practice. It turns out
+    that this technique is known as "toner transfer" and can be used for
+    <a
+      href="https://hackaday.com/2016/09/12/take-your-pcbs-from-good-to-great-toner-transfer/"
+      >PCB manufacturing</a
+    >
+    which needs to achieve even greater resolution and coverage accuracy than I
+    need for marking out! Room to improve my process here too.
+  </p>
+
+  <p>
+    Other than drill-hole placement, I also had the need to accurately
+    <b>depth</b> holes. Both the opening and closing detents and aesthetics of
+    the external screws all rely on accurate and consistent depths, which I had
+    never really needed before. Which brings us to side-quest number 2:
+    upgrading the drill-press!
+  </p>
+  <div class="click-zoom">
+    <label>
+      <input type="checkbox" />
+      <img
+        loading="lazy"
+        src="../assets/vf1/drill.jpg"
+        alt="an image of a drill press"
+      />
+    </label>
+  </div>
+
+  <p class="caption">Thrilling drilling</p>
+
+  <p>
+    Here you can see I managed to fashion a DRO (digital readout) from a cheap
+    pair of calipers, and added a worklight to illuminate the target spot, both
+    powered with a DC supply mounted inside the housing and sharing the drill's
+    AC input. So no coin-cells to run out! You can just about see the separate
+    switch nicely mounted underneath the motor power in the photo above. I also
+    overcame my commitment issues and screwed the whole thing down to the
+    worktop to minimise jiggling. All of these combined means that I can
+    theoretically accurately hit the spot I just centerpunched and drill to a
+    consistent known depth.
+  </p>
+
+  <p>
+    Which brings us to the third and final side-quest: that big beautiful slot!
+  </p>
+
+  <div class="click-zoom">
+    <label>
+      <input type="checkbox" />
+      <img
+        loading="lazy"
+        src="../assets/vf1/slot.jpg"
+        alt="an image of a knife with a nice tight slot"
+      />
+    </label>
+  </div>
+
+  <p class="caption">0.5mm slot forming the framelock spring</p>
+
+  <p>
+    This slot is what allows the spring portion of the frame to move inwards and
+    apply the locking force to the blade. I really wanted to keep this as small
+    and elegant as possible, and avoid any clearance holes at the end and
+    corners of the slot. I suppose these holes simplify manufacturing, but I
+    find them a little bit ugly. See the
+    <a href="https://spyderco.com/products/spydiechef%E2%84%A2">SpydieChef™</a>
+    (which I love) for an example of a very generous wide slot and clearance
+    holes. I wanted to shoot for something a little tighter and cleaner.
+  </p>
+
+  <p>
+    Some early success with 0.5mm HSS slitting saws in the drill-press (see
+    third prototype on the green cutting mat photo above) gave me confidence
+    that this thin little slot was actually doable. I just had to devise a
+    process which was reliable and safer than <i>manually</i> moving the vise
+    and frame under the spinning blade (which I'm <b>NOT</b> going to show).
+    Enter the compound vise!
+  </p>
+
+  <div class="click-zoom">
+    <label>
+      <input type="checkbox" />
+      <img
+        loading="lazy"
+        src="../assets/vf1/xy.jpg"
+        alt="an image of a restored XY table"
+      />
+    </label>
+  </div>
+
+  <p class="caption">Restored XY compound vise</p>
+
+  <p>
+    This was the smallest compound vise I'd ever come across, with only a 75mm
+    jaw-width. Picked it up on eBay very reasonably because it had some parts
+    missing. Two new hardened jaws and a handle later (guess which one is
+    mine...) and I could accurately cut the bulk of the slot without breaking
+    saws or raising my blood-pressure to previously unknown levels. You can't
+    cut the whole thing all the way through because you can't get the blade
+    right on the center-line of the saw because the arbor is in the way. But it
+    was easy enough to connect the two slots using a modified wide hacksaw blade
+    once the slitting saw has cut a nice guide line most of the way through.
+  </p>
+
+  <p>
+    The final knife in the pretty photos above is the 6th major design revision
+    and the product of 3 completed prototypes and 5 or 6 sets of frames which
+    didn't make it that far! It was always such a relief to get past cutting the
+    slot knowing that the hard parts were (mostly) done. I took a few rounds of
+    iteration to come up with the style of chamfer and type of finish I liked on
+    the frame scales:
+  </p>
+
+  <div class="click-zoom">
+    <label>
+      <input type="checkbox" />
+      <img
+        loading="lazy"
+        src="../assets/vf1/sandblast.jpg"
+        alt="an image of two completed frames"
+      />
+    </label>
+  </div>
+
+  <p class="caption">Early prototype sandblasted frames</p>
+
+  <p>
+    Sandblasted titanium looks and feels excellent. Fresh out of blasting it's
+    very bright white and almost sparkles with all the different micro-facets.
+    But with a little handling and a light oil, you get the nice titanium grey
+    and lovely smooth but grippy handfeel. I haven't yet experimented with
+    anodising on top of this sandblast. Ideas ideas...
+  </p>
+
+  <div class="click-zoom">
+    <label>
+      <input type="checkbox" />
+      <img
+        loading="lazy"
+        src="../assets/vf1/clip.jpg"
+        alt="an image of a pocket clip"
+      />
+    </label>
+  </div>
+
+  <p class="caption">Clippy!</p>
+
+  <p>
+    The clip also needed a few design revisions. I eventually landed on this
+    relatively thin design in the same sandblasted finish as the frames. The
+    polished titanium and brass variants were interesting but a bit
+    <i>too</i> audacious for me...
+  </p>
+
+  <p>
+    There's a hidden pin below the clip screw so the whole thing can't spin
+    around. Adds a very reassuring interference fit, but needed to be absolutely
+    <b>perfectly</b> accurate to work!
+  </p>
+
+  <div class="click-zoom">
+    <label>
+      <input type="checkbox" />
+      <img
+        loading="lazy"
+        src="../assets/vf1/plunge.jpg"
+        alt="an image of a knife blade"
+      />
+    </label>
+  </div>
+
+  <p class="caption">Memories of hand sanding...</p>
+
+  <p>
+    I thought I'd make things extra difficult for myself on this first
+    successful one and do a high-polish on the blade. Remember that this
+    ASP-2053 is specifically designed to be highly abrasive and wear resistant!
+    Definitely took me a fair few hours, and gave me knifemaker's elbow. It's
+    not a full mirror polish, but it's good enough for me. I'll be interested to
+    see how the ASP holds up (I usually stonewash for the nice dark finish). It
+    really goes well with the stainless hardware.
+  </p>
+
+  <p>
+    Maybe I should try one with one carbon-fibre left frame and a dark
+    stonewashed blade and hardware...
+  </p>
+
+  <div class="click-zoom">
+    <label>
+      <input type="checkbox" />
+      <img
+        loading="lazy"
+        src="../assets/vf1/ball.jpg"
+        alt="an image of the inside of a folding knife"
+      />
+    </label>
+  </div>
+
+  <p class="caption">
+    This gives you an idea of how the framelock works. Ignore my wobbly chamfer
+    lines - at least you can tell it's handmade.
+  </p>
+
+  <p>
+    Here we can see the inside of the knife in the open position. The lock bar
+    springs downwards and the ball bearing rides against a precisely-angled part
+    of the blade. The bearing is interference fit into the titanium frame and
+    protrudes into the front slot. As you can imagine, the precise positioning
+    of the bearing relative to the back of the blade, the angle of the angled
+    portion, the spring tension of the lockbar, and polish and roundovers on the
+    blade part all play a huge part in the handfeel of using the mechanism. It
+    took a lot of revisions to get right. It's a lot of work, but I'm really
+    happy with this one.
+  </p>
+
+  <p>
+    There's a similar number of variables on the closing detent. There's a blind
+    hole on the pivot portion of the blade which the ball bearing rests in,
+    which gives a satisfying click when it lands closed (at the same point the
+    back of the blade comes to rest on the brass stop-pin), and also lets the
+    lockbar sit flush with the rest of the frame. The size of this blind hole as
+    well as the spring tension determine the blade's resistance to opening.
+  </p>
+
+  <p>
+    I didn't invent this ball-bearing concept obviously, it's all copied from
+    the Chris Reeve Inkosi (hey, if it ain't broke...). But I had to figure out
+    all the geometry for my design. And fitting the ball directly into the frame
+    definitely has manufacturing and design advantages compared to a more
+    complicated lockbar insert or just going raw frame-on-blade.
+  </p>
+
+  <div class="click-zoom">
+    <label>
+      <input type="checkbox" />
+      <img
+        loading="lazy"
+        src="../assets/vf1/spacer.jpg"
+        alt="an image of of a folding knife standing up"
+      />
+    </label>
+  </div>
+
+  <p class="caption">Wouldn't be one of mine without some brass somewhere</p>
+
+  <p>
+    Here you can see the brass backspacer and stop-pin. I like the little pop of
+    colour.
+  </p>
+
+  <p>
+    After I finished all the photos, I had some fun using the blade finally!
+    Very very happy with the performance. The polish definitely adds a certain
+    smoothness, and the steel is incredible as ever.
+  </p>
+
+  <p>
+    When I finally finished this piece which I'm about 95% happy with, I was
+    very relieved to take a break from the folder project for a while! But now
+    I'm almost through the recovery period, I'm sure it won't be long before the
+    next revision...
+  </p>
+
+  <div id="footer">
+    <p class="note">BV25</p>
+  </div>
+</div>
